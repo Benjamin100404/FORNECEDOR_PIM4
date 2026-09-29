@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - MerKdito</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-blob blob-2"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="dashboard.html" class="logo">
+                <span class="logo-text" style="color: #5DA54A; font-size: 2rem; font-weight: 800; letter-spacing: -1px;">MerKdito</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="produtos.html" class="nav-item active"><i class="fa-solid fa-box-open"></i> Produtos</a></li>
+                <li><a href="adicionar_produto.html" class="nav-item"><i class="fa-solid fa-plus-circle"></i> Adicionar Produto</a></li>
+                <li><a href="perfil.html" class="nav-item"><i class="fa-solid fa-user-tie"></i> Meu Perfil</a></li>
+            </ul>
+            
+            <div class="logout-container">
+                <a href="index.html" class="nav-item"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                    <div>
+                        <h1 class="page-title">Produtos</h1>
+                        <p class="page-subtitle" style="margin-bottom:0">Gestão do catálogo (15 produtos)</p>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="btn btn-outline" onclick="alert('Funcionalidade disponível no Dashboard.')"><i class="fa-solid fa-file-invoice"></i> Gerar Relatório</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="animate-fade-in delay-1">
+                <div class="glass-panel" style="padding: 24px;">
+                    <!-- Filters -->
+                    <div class="filter-bar">
+                        <div class="search-input">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" class="form-control" placeholder="Buscar por nome ou código...">
+                        </div>
+                        <select class="form-control" style="width: 200px;">
+                            <option value="">Todas as Categorias</option>
+                            <option value="mercearia">Mercearia</option>
+                            <option value="acougue">Açougue e Aves</option>
+                            <option value="hortifruti">Hortifruti</option>
+                            <option value="padaria">Padaria</option>
+                            <option value="laticinios">Laticínios</option>
+                            <option value="frios">Frios e Embutidos</option>
+                            <option value="bebidas">Bebidas</option>
+                            <option value="limpeza">Limpeza</option>
+                            <option value="higiene">Higiene e Perfumaria</option>
+                            <option value="congelados">Congelados</option>
+                            <option value="pet">Pet Shop</option>
+                        </select>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>CÓDIGO</th>
+                                    <th>FOTO</th>
+                                    <th>NOME</th>
+                                    <th>CATEGORIA</th>
+                                    <th>QUANTIDADE</th>
+                                    <th>PREÇO</th>
+                                    <th>VALOR TOTAL</th>
+                                    <th>AÇÕES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 500;">MER001</td>
+                                    <td>
+                                        <div style="width: 45px; height: 45px; border-radius: 8px; background-color: var(--color-cream-dark); display: flex; align-items: center; justify-content: center; color: var(--color-teal); border: 1px solid var(--border-glass);">
+                                            <i class="fa-solid fa-image"></i>
+                                        </div>
+                                    </td>
+                                    <td>Arroz Branco Tipo 1 (5kg)</td>
+                                    <td><span class="badge badge-teal">Mercearia</span></td>
+                                    <td>250</td>
+                                    <td>R$ 24,90</td>
+                                    <td>R$ 6.225,00</td>
+                                    <td>
+                                        <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn delete"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 500;">LAT003</td>
+                                    <td>
+                                        <div style="width: 45px; height: 45px; border-radius: 8px; background-color: var(--color-cream-dark); display: flex; align-items: center; justify-content: center; color: var(--color-teal); border: 1px solid var(--border-glass);">
+                                            <i class="fa-solid fa-image"></i>
+                                        </div>
+                                    </td>
+                                    <td>Leite Integral Caixa 1L</td>
+                                    <td><span class="badge badge-orange">Laticínios</span></td>
+                                    <td>420</td>
+                                    <td>R$ 4,50</td>
+                                    <td>R$ 1.890,00</td>
+                                    <td>
+                                        <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn delete"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 500;">LIM004</td>
+                                    <td>
+                                        <div style="width: 45px; height: 45px; border-radius: 8px; background-color: var(--color-cream-dark); display: flex; align-items: center; justify-content: center; color: var(--color-teal); border: 1px solid var(--border-glass);">
+                                            <i class="fa-solid fa-image"></i>
+                                        </div>
+                                    </td>
+                                    <td>Detergente Líquido Neutro 500ml</td>
+                                    <td><span class="badge badge-yellow">Limpeza</span></td>
+                                    <td style="color: var(--color-red); font-weight: 600;">38</td>
+                                    <td>R$ 2,20</td>
+                                    <td>R$ 83,60</td>
+                                    <td>
+                                        <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn delete"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MerKdito</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .login-logo {
+            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-teal);
+        }
+        
+        .login-logo-badge {
+            background-color: var(--color-yellow);
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .login-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        
+        .login-form {
+            text-align: left;
+        }
+        
+        .demo-hint {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Decor -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <div class="login-wrapper">
+        <div class="glass-panel login-card animate-fade-in">
+            <div class="login-logo" style="margin-bottom: 30px;">
+                <span class="logo-text" style="color: #5DA54A; font-size: 3.2rem; font-weight: 800; letter-spacing: -1.5px;">MerKdito</span>
+            </div>
+            
+            <form action="dashboard.html" class="login-form">
+                <div class="form-group">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" class="form-control" placeholder="seu@email.com" required>
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <label class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Entrar no Sistema</button>
+            </form>
+            
+            <p class="demo-hint">Demo: use qualquer e-mail e senha para testar</p>
+        </div>
+    </div>
+</body>
+</html>

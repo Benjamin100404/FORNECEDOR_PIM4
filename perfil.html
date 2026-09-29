@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Fornecedor - MerKdito</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 24px;
+        }
+        
+        .profile-card {
+            padding: 30px;
+            text-align: center;
+            height: fit-content;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--color-orange);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 20px auto;
+            border: 4px solid white;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .profile-avatar:hover::after {
+            content: '\f030';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            background: rgba(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .profile-status {
+            display: inline-block;
+            background-color: rgba(254, 154, 52, 0.2);
+            color: var(--color-orange);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .details-card {
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-teal);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="dashboard.html" class="logo" style="text-decoration: none;">
+                <span class="logo-text" style="color: #5DA54A; font-size: 2rem; font-weight: 800; letter-spacing: -1px;">MerKdito</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="produtos.html" class="nav-item"><i class="fa-solid fa-box-open"></i> Produtos</a></li>
+                <li><a href="adicionar_produto.html" class="nav-item"><i class="fa-solid fa-plus-circle"></i> Adicionar Produto</a></li>
+                <li><a href="perfil.html" class="nav-item active"><i class="fa-solid fa-user-tie"></i> Meu Perfil</a></li>
+            </ul>
+            
+            <div class="logout-container">
+                <a href="index.html" class="nav-item"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div>
+                    <h1 class="page-title">Perfil do Fornecedor</h1>
+                    <p class="page-subtitle" style="margin-bottom:0">Gerencie todos os dados da sua empresa</p>
+                </div>
+                
+                <div class="header-actions">
+                    <button id="btnExportar" class="btn btn-outline"><i class="fa-solid fa-download"></i> Exportar Dados</button>
+                    <button class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar Alterações</button>
+                </div>
+            </header>
+
+            <div class="animate-fade-in delay-1 profile-grid">
+                
+                <!-- Left Column: Identity -->
+                <div class="glass-panel profile-card">
+                    <div class="profile-avatar" title="Alterar Foto"><i class="fa-solid fa-building"></i></div>
+                    <div class="profile-status"><i class="fa-solid fa-circle-check"></i> Cadastro Ativo</div>
+                    
+                    <div class="form-group" style="text-align: left; margin-top: 10px;">
+                        <label class="form-label">Nome da Empresa (Razão Social)</label>
+                        <input type="text" class="form-control" value="CleanMax Indústria e Comércio Ltda">
+                    </div>
+                    
+                    <div class="form-group" style="text-align: left;">
+                        <label class="form-label">Nome Fantasia</label>
+                        <input type="text" class="form-control" value="CleanMax">
+                    </div>
+                </div>
+
+                <!-- Right Column: Details & Edit -->
+                <div class="glass-panel details-card">
+                    <form>
+                        <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Dados de Contato e Identificação</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">CNPJ</label>
+                                <input type="text" class="form-control" value="12.345.678/0001-90">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">E-mail Corporativo</label>
+                                <input type="email" class="form-control" value="contato@cleanmax.com.br">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Telefone Comercial</label>
+                                <input type="text" class="form-control" value="(11) 4002-8922">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Website</label>
+                                <input type="text" class="form-control" value="www.cleanmax.com.br">
+                            </div>
+                        </div>
+
+                        <hr style="border:0; border-top: 1px solid var(--border-glass); margin: 30px 0;">
+
+                        <h3 class="section-title"><i class="fa-solid fa-location-dot"></i> Endereço e Logística</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">CEP</label>
+                                <input type="text" class="form-control" value="01001-000">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Logradouro</label>
+                                <input type="text" class="form-control" value="Praça da Sé, 111">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Estado</label>
+                                <select class="form-control" disabled>
+                                    <option value="SP" selected>São Paulo (SP)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Cidade (Apenas Municípios de SP)</label>
+                                <select class="form-control">
+                                    <option value="Americana">Americana</option>
+                                    <option value="Araçatuba">Araçatuba</option>
+                                    <option value="Araraquara">Araraquara</option>
+                                    <option value="Barueri">Barueri</option>
+                                    <option value="Bauru">Bauru</option>
+                                    <option value="Campinas">Campinas</option>
+                                    <option value="Diadema">Diadema</option>
+                                    <option value="Franca">Franca</option>
+                                    <option value="Guarulhos">Guarulhos</option>
+                                    <option value="Indaiatuba">Indaiatuba</option>
+                                    <option value="Jacareí">Jacareí</option>
+                                    <option value="Jundiaí">Jundiaí</option>
+                                    <option value="Limeira">Limeira</option>
+                                    <option value="Marília">Marília</option>
+                                    <option value="Mogi das Cruzes">Mogi das Cruzes</option>
+                                    <option value="Osasco">Osasco</option>
+                                    <option value="Piracicaba">Piracicaba</option>
+                                    <option value="Presidente Prudente">Presidente Prudente</option>
+                                    <option value="Ribeirão Preto">Ribeirão Preto</option>
+                                    <option value="Santo André">Santo André</option>
+                                    <option value="Santos">Santos</option>
+                                    <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                                    <option value="São Caetano do Sul">São Caetano do Sul</option>
+                                    <option value="São Carlos">São Carlos</option>
+                                    <option value="São José do Rio Preto">São José do Rio Preto</option>
+                                    <option value="São José dos Campos">São José dos Campos</option>
+                                    <option value="São Paulo" selected>São Paulo (Capital)</option>
+                                    <option value="Sorocaba">Sorocaba</option>
+                                    <option value="Suzano">Suzano</option>
+                                    <option value="Taubaté">Taubaté</option>
+                                    <option value="Outros">Outro município...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr style="border:0; border-top: 1px solid var(--border-glass); margin: 30px 0;">
+
+                        <h3 class="section-title"><i class="fa-solid fa-building-columns"></i> Dados Bancários e Faturamento</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Chave PIX (CNPJ, Email ou Telefone)</label>
+                                <input type="text" class="form-control" value="12.345.678/0001-90">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Banco</label>
+                                <select class="form-control">
+                                    <option value="341" selected>Itaú Unibanco (341)</option>
+                                    <option value="001">Banco do Brasil (001)</option>
+                                    <option value="104">Caixa Econômica (104)</option>
+                                    <option value="237">Bradesco (237)</option>
+                                    <option value="033">Santander (033)</option>
+                                    <option value="260">Nubank (260)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Agência</label>
+                                <input type="text" class="form-control" value="1234">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Conta Corrente</label>
+                                <input type="text" class="form-control" value="12345-6">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('btnExportar').addEventListener('click', function() {
+            // Coletar todos os dados dos formulários da tela de Perfil
+            const inputs = document.querySelectorAll('.form-control');
+            const dadosFornecedor = {};
+            
+            inputs.forEach(input => {
+                let key = 'Campo';
+                const label = input.previousElementSibling;
+                if (label && label.classList.contains('form-label')) {
+                    key = label.innerText.trim();
+                }
+                
+                // Tratar o select separadamente se for texto
+                if(input.tagName === 'SELECT') {
+                    dadosFornecedor[key] = input.options[input.selectedIndex].text;
+                } else {
+                    dadosFornecedor[key] = input.value;
+                }
+            });
+
+            // Gerar e baixar arquivo JSON
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(dadosFornecedor, null, 4));
+            const downloadLink = document.createElement('a');
+            downloadLink.setAttribute("href", dataStr);
+            downloadLink.setAttribute("download", "dados_perfil_merkdito.json");
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+            
+            // Aviso de sucesso
+            alert('✅ Dados exportados com sucesso! O arquivo JSON foi baixado no seu computador.');
+        });
+    </script>
+</body>
+</html>
